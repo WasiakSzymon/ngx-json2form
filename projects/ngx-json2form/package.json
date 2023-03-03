@@ -1,6 +1,6 @@
 {
   "name": "ngx-json2form",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"
@@ -10,5 +10,9 @@
   },
   "sideEffects": false,
   "license": "MIT",
-  "author": "Szymon Wasiak"
+  "author": "Szymon Wasiak",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WasiakSzymon/ngx-json2form/tree/main/projects/ngx-json2form"
+  }
 }
