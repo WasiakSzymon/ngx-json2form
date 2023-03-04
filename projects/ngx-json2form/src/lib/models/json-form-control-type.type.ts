@@ -1,0 +1,1 @@
+export type JsonFormControlType = 'text' | 'checkbox' | 'number' | 'select' | 'text-area';

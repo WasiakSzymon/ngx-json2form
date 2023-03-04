@@ -1,0 +1,84 @@
+<form *ngIf="formGroup && initialized && source" [formGroup]="formGroup"
+    style="display: flex;flex-direction: column; padding: 16px;" autocomplete="off">
+    <ng-container *ngFor="let field of source.controls">
+        <ng-container [ngSwitch]="field.type">
+            <ng-container *ngSwitchDefault>
+                <mat-form-field class="w-100" style="max-width: 480px;">
+                    <input matInput [formControlName]="field.name" [placeholder]="field.label" [type]="field.type"
+                        autocomplete="off" [mask]="field.mask ? field.mask : null">
+                    <mat-error *ngIf="formGroup.controls[field.name].errors">
+                        {{
+                        (formGroup.controls[field.name].errors?.['required'] === null ||
+                        formGroup.controls[field.name].errors?.['required'] === undefined
+                        ? '' :
+                        (field?.validators?.message?.['required'] ?? 'The field is required'))
+                        }}
+
+                        {{
+                        formGroup.controls[field.name].errors?.['maxlength'] === null ||
+                        formGroup.controls[field.name].errors?.['maxlength'] === undefined ? '' :
+                        ((field?.validators?.message?.['maxLength'] ?? 'Max character count is ')
+                        + formGroup.controls[field.name].errors?.['maxlength']?.['requiredLength'])
+                        }}
+
+                        {{
+                        formGroup.controls[field.name].errors?.['minlength'] === null ||
+                        formGroup.controls[field.name].errors?.['minlength'] === undefined ? '' :
+                        (field?.validators?.message?.['minLength'] ?? 'Min character count is ' +
+                        formGroup.controls[field.name].errors?.['minlength']?.['requiredLength'])
+                        }}
+
+                        {{
+                        formGroup.controls[field.name].errors?.['min'] === null ||
+                        formGroup.controls[field.name].errors?.['min'] === undefined ? '' :
+                        (field?.validators?.message?.['min'] ??
+                        'Min value is ' + formGroup.controls[field.name].errors?.['min']?.['min'])
+                        }}
+
+                        {{
+                        formGroup.controls[field.name].errors?.['max'] === null ||
+                        formGroup.controls[field.name].errors?.['max'] === undefined ? '' :
+                        (field?.validators?.message?.['max'] ?? 'Max value is ' +
+                        formGroup.controls[field.name]?.errors?.['max']?.['max'])
+                        }}
+
+                        {{
+                        formGroup.controls[field.name].errors?.['email'] === null ||
+                        formGroup.controls[field.name].errors?.['email'] === undefined ? '' :
+                        (field?.validators?.message?.['email'] ?? 'Incorrect email format')
+                        }}
+                    </mat-error>
+                </mat-form-field>
+            </ng-container>
+            <ng-container *ngSwitchCase="'checkbox'">
+                <div class="w-100" style="max-width: 480px;">
+                    <mat-checkbox [formControlName]="field.name">
+                        {{field.label}}
+                    </mat-checkbox>
+                </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'text-area'">
+                <mat-form-field class="w-100" style="max-width: 480px;">
+                    <mat-label>Textarea</mat-label>
+                    <textarea matInput [formControlName]="field.name"></textarea>
+                </mat-form-field>
+            </ng-container>
+            <ng-container *ngSwitchCase="'select'">
+                <mat-form-field class="w-100" style="max-width: 480px;">
+                    <mat-label>{{ field.label }}</mat-label>
+                    <select matNativeControl [formControlName]="field.name">
+                        <option *ngFor="let option of source.dictionaries[field.name]" [value]="option.value">
+                            {{option.label}}
+                        </option>
+                    </select>
+                    <mat-error *ngIf="formGroup.controls[field.name].errors">
+                        {{
+                        (formGroup.controls[field.name].errors?.['required'] === null ? '' :
+                        (field?.validators?.message?.['required'] ?? 'The field is required'))
+                        }}
+                    </mat-error>
+                </mat-form-field>
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</form>
