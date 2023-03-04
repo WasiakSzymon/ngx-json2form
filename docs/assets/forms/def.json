@@ -1,0 +1,9 @@
+{
+    "controlType": [
+        "text",
+        "checkbox",
+        "number",
+        "select",
+        "text-area"
+    ]
+}

@@ -11,18 +11,6 @@
 [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 [Node](https://nodejs.org/ar/blog/release/v18.14.0/) version 18.14.0
 
-## Build
-
-#### Run `ng build ngx-json2form` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-#### After building your library with `ng build ngx-json2form`, go to the dist folder `cd dist/ngx-json2form` and run `npm publish`.
-
-## Running unit tests
-
-#### Run `ng test ngx-json2form` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
 # Exmaple usage:
  1. `import { NgxJson2formModule } from 'ngx-json2form';`
  2. ```

@@ -59,7 +59,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/example-ngx-json2form",
+            "baseHref": "/ngx-json2form/",
+            "outputPath": "docs",
             "index": "projects/example-ngx-json2form/src/index.html",
             "main": "projects/example-ngx-json2form/src/main.ts",
             "polyfills": [

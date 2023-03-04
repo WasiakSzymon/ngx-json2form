@@ -1,0 +1,126 @@
+{
+    "controls": [
+        {
+            "sortOrder": 1,
+            "name": "favColor",
+            "label": "Favourite color",
+            "value": "blue",
+            "type": "select",
+            "validators": {
+                "type": {
+                    "required": false
+                }
+            }
+        },
+        {
+            "sortOrder": 2,
+            "name": "favColor2",
+            "label": "Favourite color2",
+            "value": "",
+            "type": "select",
+            "validators": {
+                "type": {
+                    "required": false
+                }
+            }
+        },
+        {
+            "sortOrder": 4,
+            "name": "name",
+            "label": "Your name",
+            "value": "",
+            "type": "text",
+            "validators": {
+                "type": {
+                    "minLength": 1,
+                    "maxLength": 5,
+                    "required": true
+                },
+                "message": {
+                    "minLength": "custom message min length is ",
+                    "maxLength": "custom message max length is ",
+                    "required": "custom message required"
+                }
+            }
+        },
+        {
+            "sortOrder": 3,
+            "name": "age",
+            "label": "Your age",
+            "value": "",
+            "type": "number",
+            "validators": {
+                "type": {
+                    "min": 1,
+                    "max": 150
+                }
+            }
+        },
+        {
+            "sortOrder": 5,
+            "name": "underAge",
+            "label": "Im under 18",
+            "value": "",
+            "type": "checkbox",
+            "validators": {
+                "type": {}
+            }
+        },
+        {
+            "sortOrder": 6,
+            "name": "description",
+            "label": "Your description",
+            "value": "",
+            "type": "text-area",
+            "validators": {
+                "type": {}
+            }
+        },
+        {
+            "sortOrder": 7,
+            "name": "zipcode",
+            "label": "zip code",
+            "value": "",
+            "type": "text",
+            "validators": {
+                "type": {
+                    "required": true,
+                    "minLength": 5,
+                    "maxLength": 5
+                }
+            },
+            "mask": "00-000"
+        }
+    ],
+    "dictionaries": {
+        "favColor": [
+            {
+                "label": "red",
+                "value": "red"
+            },
+            {
+                "label": "blue",
+                "value": "blue"
+            },
+            {
+                "label": "green",
+                "value": "green"
+            }
+        ],
+        "favColor2": [
+            {
+                "label": "red",
+                "value": "red"
+            },
+            {
+                "label": "blue",
+                "value": "blue"
+            },
+            {
+                "label": "green",
+                "value": "green"
+            }
+        ]
+    },
+    "api": "/api/Onboarding/Employee/:emplID"
+}
