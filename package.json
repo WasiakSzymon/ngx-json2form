@@ -24,6 +24,7 @@
     "@angular/router": "^15.2.0",
     "badges": "^4.27.0",
     "ngx-mask": "^15.0.3",
+    "ngx-toastr": "^16.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

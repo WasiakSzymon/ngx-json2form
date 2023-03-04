@@ -1,5 +1,16 @@
 <div
-    style="width: 100%; height:100%;padding:2rem; display:flex; flex-direction: column; justify-content:center; align-items:center;">
+    style="width: '100%'; height: '100%'; display:flex; flex-direction: column; justify-content:center; align-items:center;">
     <h1>exmaple-app-ngx-json2form</h1>
-    <json2form *ngIf="json && formGroup" [JSON]="json" [(formGroup)]="formGroup"></json2form>
+    <div style="display: flex; flex-direction: column; width: 100%; align-items:center;">
+        <div
+            style="display: flex; flex-direction: column; width: 80%; border-bottom: 2px solid black; align-items:center;padding-bottom: 32px;">
+            <label for="fileInput" style="font-size: 16px; font-weight: bold; margin-bottom: 12px;">Choose your json file:</label>
+            <input id="fileInput" type="file" accept="application/JSON" (change)="onFileChange($event)" />
+        </div>
+        <div style="display: flex; width: 80%; flex-direction: column; padding: 0 16px; align-items:center;">
+            <json2form #json2formElement *ngIf="json && formGroup" [JSON]="json" [(formGroup)]="formGroup"
+                formId="example-form" (ngSubmit)="saveControlValues()"></json2form>
+            <button mat-raised-button form="example-form" type="submit" style="width: fit-content;">SAVE</button>
+        </div>
+    </div>
 </div>

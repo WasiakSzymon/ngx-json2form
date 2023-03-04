@@ -5,4 +5,5 @@ export interface JsonFormResponse {
     controls: JsonFormControls[];
     dictionaries: JsonFormDictionary;
     api?: string;
+    formId?: string | number;
 }

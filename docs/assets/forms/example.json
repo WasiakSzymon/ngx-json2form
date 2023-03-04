@@ -26,8 +26,8 @@
         },
         {
             "sortOrder": 4,
-            "name": "name",
-            "label": "Your name",
+            "name": "firstName",
+            "label": "Your first name",
             "value": "",
             "type": "text",
             "validators": {
@@ -122,5 +122,5 @@
             }
         ]
     },
-    "api": "/api/Onboarding/Employee/:emplID"
+    "api": "/assets/forms/values"
 }

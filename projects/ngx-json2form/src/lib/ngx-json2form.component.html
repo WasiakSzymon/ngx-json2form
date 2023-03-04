@@ -1,4 +1,4 @@
-<form *ngIf="formGroup && initialized && source" [formGroup]="formGroup"
+<form *ngIf="formGroup && initialized && source" [formGroup]="formGroup" [id]="formId" (ngSubmit)="handleNgSubmit()"
     style="display: flex;flex-direction: column; padding: 16px;" autocomplete="off">
     <ng-container *ngFor="let field of source.controls">
         <ng-container [ngSwitch]="field.type">

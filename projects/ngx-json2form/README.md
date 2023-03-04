@@ -7,7 +7,6 @@
 ---
 
 # NgxJson2form
-
 [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 [Node](https://nodejs.org/ar/blog/release/v18.14.0/) version 18.14.0
 
@@ -38,8 +37,9 @@
 
 # Documentation
 ## API
-#### `[JSON]="value"` - value correct json structure string or object. Only 1 level of nesting.
-#### `([formGroup])="your_empty_form_group"`  - two way bindings formGroup
+#### `[JSON]="your_json"` - value correct json structure string or object. Only 1 level of nesting. @Input
+#### `([formGroup])="your_empty_form_group"`  - two way bindings formGroup @Input/@Output
+#### `(ngSubmit)="your_method()"` - emit void event on submit @Output
 
 
 ## JSON STRUCTURE
@@ -110,7 +110,7 @@
     pattern?: string;
     nullValidator?: boolean;
 `
-#### `"controls.validators.message"` - (optional) anys of default validators and custtom error message`
+#### `"controls.validators.message"` - any of default validators and custtom error message`
     min?: string;
     max?: string;
     required?: string;
@@ -125,30 +125,32 @@
 #### `"dictionaries["controls.name"]` - list of elements for select control
 #### `"dictionaries["controls.name"].label` - label for element item
 #### `"dictionaries["controls.name"].value` - value for element item
-### - suffix
-in the future it will be developed
-
-#### preffix 
-in the future it will be developed
-
-#### validators 
-only default validators avilable - required, min, maxLength etc. (in the future it will be extended for custom validators)
 
 ## README.md
 #### Genereting badges in README
 Run command `npm run generate:readme:badges`
 
 ## Styles
-
 Form are built using material-angular, so just adjust theme. 
 [Theme Angular Material](https://v8.material.angular.io/guide/theming)
 
-## Contribution
 
+## TODO
+#### validators 
+in the future it will be extended for custom validators
+#### suffix
+in the future it will be developed
+#### preffix 
+in the future it will be developed
+#### disabled
+in future it will be developed
+#### file input
+in future it will be developed
+
+## Contribution
 Im open for contribution, just write to me! :)
 
 ## Legal
-
 Copyright 2023 Szymon Wasiak
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

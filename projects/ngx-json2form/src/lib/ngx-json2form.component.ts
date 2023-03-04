@@ -17,6 +17,10 @@ export class NgxJson2formComponent implements OnInit {
   @Input() initialized: boolean = false;
   @Output() initilizedChange = new EventEmitter<boolean>();
 
+  @Input() formId: string = (Math.random() + 1).toString(36).substring(7);
+
+  @Output() ngSubmit = new EventEmitter<void>();
+
   public source: JsonFormResponse | null = null;
 
 
@@ -48,8 +52,8 @@ export class NgxJson2formComponent implements OnInit {
     }
   }
 
-  public Boolean(val: any | null) {
-    return Boolean(val);
+  public handleNgSubmit(): void {
+    this.ngSubmit.emit();
   }
 
   private MapConfigValidatorsToFormValidators(config: JsonFormControls): ValidatorFn {

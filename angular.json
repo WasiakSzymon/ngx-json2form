@@ -73,7 +73,8 @@
               "projects/example-ngx-json2form/src/assets"
             ],
             "styles": [
-              "projects/example-ngx-json2form/src/styles.scss"
+              "projects/example-ngx-json2form/src/styles.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },

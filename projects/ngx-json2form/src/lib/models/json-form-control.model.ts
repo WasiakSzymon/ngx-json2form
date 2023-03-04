@@ -6,7 +6,7 @@ export interface JsonFormControls {
     sortOrder: number;
     name: string;
     label: string;
-    value: string | number | boolean;
+    value: string | number | boolean | any;
     type: JsonFormControlType;
     validators: {
         type: JsonFormValidators;
