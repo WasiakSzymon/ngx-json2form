@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     this.httpClient.get<JsonFormResponse>(jsonFormPath).pipe(
       take(1),
       switchMap(json => {
-        this.toastr.success('loaded form map from exmaple.json', '', { disableTimeOut: true });
+        this.toastr.success('loaded form map from example.json', '', { disableTimeOut: true });
         const jsonValuesFormPath = this.basePath + `${json.api}.json`;
         return combineLatest([of(json), this.httpClient.get<any>(jsonValuesFormPath).pipe(take(1))])
       })).subscribe(([json, values]) => {
