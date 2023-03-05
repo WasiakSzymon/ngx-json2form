@@ -10,14 +10,25 @@
 [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
 [Node](https://nodejs.org/ar/blog/release/v18.14.0/) version 18.14.0
 
-# Exmaple usage:
+# Live demo:
+ - Angular 15: [DEMO](https://wasiakszymon.github.io/ngx-json2form/)
+
+# Install:
+
+```
+npm install ngx-json2form
+```
+
+NPM Package: https://www.npmjs.com/package/ngx-json2form
+
+# Example usage:
  1. `import { NgxJson2formModule } from 'ngx-json2form';`
  2. ```
-    <div
-    style="width: 100%; height:100%;padding:2rem; display:flex; flex-direction: column; justify-content:center; align-items:center;">
-    <h1>exmaple-app-ngx-json2form</h1>
-    <json2form *ngIf="json && formGroup" [JSON]="json" [(formGroup)]="formGroup"></json2form>
-    </div>
+        <div class="container">
+            <json2form #json2formElement *ngIf="json && formGroup" [JSON]="json" [(formGroup)]="formGroup"
+                formId="example-form" (ngSubmit)="saveForm()"></json2form>
+            <button mat-raised-button form="example-form" type="submit">SAVE</button>
+        </div>
     ```
  3. 
  ```
