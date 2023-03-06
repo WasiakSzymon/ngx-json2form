@@ -3,14 +3,34 @@
     <h1>example-app-ngx-json2form</h1>
     <div style="display: flex; flex-direction: column; width: 100%; align-items:center;">
         <div
-            style="display: flex; flex-direction: column; width: 80%; border-bottom: 2px solid black; align-items:center;padding-bottom: 32px;">
-            <label for="fileInput" style="font-size: 16px; font-weight: bold; margin-bottom: 12px;">Choose your json file:</label>
+            style="display: flex; flex-direction: column; width: 100%; border-bottom: 2px solid black; align-items:center;padding-bottom: 32px;">
+            <label for="fileInput" style="font-size: 16px; font-weight: bold; margin-bottom: 12px;">Choose your json
+                file:</label>
             <input id="fileInput" type="file" accept="application/JSON" (change)="onFileChange($event)" />
         </div>
-        <div style="display: flex; width: 80%; flex-direction: column; padding: 0 16px; align-items:center;">
-            <json2form #json2formElement *ngIf="json && formGroup" [JSON]="json" [(formGroup)]="formGroup"
-                formId="example-form" (ngSubmit)="saveControlValues()"></json2form>
-            <button mat-raised-button form="example-form" type="submit" style="width: fit-content;">SAVE</button>
+        <div style="display: flex; width: 100%; flex-direction: row;">
+            <div style="display: flex; width: 50%; flex-direction: row;" *ngIf="fileToLoad === null">
+                <div style="background-color: blanchedalmond;padding: 8px;">
+                    <h3 style="width: 100%; text-align: center;">example.json file</h3>
+                    <pre>
+                        {{ jsonPreview }}
+                    </pre>
+                </div>
+                <div style="background-color: rgb(222, 125, 125);padding: 8px;">
+                    <h3 style="width: 100%; text-align: center;">values.json file</h3>
+                    <pre>
+                        {{ valuesPreview }}
+                    </pre>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items:center;"
+                [ngStyle]="{'width': fileToLoad === null ? '50%' : '100%' }">
+                <h3 style="width: 100%; text-align: center;" *ngIf="fileToLoad === null">Form generated based on
+                    example.json</h3>
+                <json2form #json2formElement *ngIf="json && formGroup" [JSON]="json" [(formGroup)]="formGroup"
+                    formId="example-form" (ngSubmit)="saveControlValues()"></json2form>
+                <button mat-raised-button form="example-form" type="submit" style="width: fit-content;">SAVE</button>
+            </div>
         </div>
     </div>
 </div>

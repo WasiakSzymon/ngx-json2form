@@ -21,6 +21,9 @@ export class AppComponent implements OnInit {
   public fileToLoad: File | null = null;
   public readonly basePath = '../' + window.location.pathname.split('/')[1];
 
+  public jsonPreview: string = '';
+  public valuesPreview: string = '';
+
 
   constructor(private httpClient: HttpClient, private toastr: ToastrService) {
 
@@ -35,6 +38,8 @@ export class AppComponent implements OnInit {
         return combineLatest([of(json), this.httpClient.get<any>(jsonValuesFormPath).pipe(take(1))])
       })).subscribe(([json, values]) => {
         if (values) {
+          this.jsonPreview = JSON.stringify(json, null, 4);
+          this.valuesPreview = JSON.stringify(values, null, 4);
           let _json = json;
           const _values = this.removeFalsyElement(values);
           Object.keys(_values).forEach(key => {
