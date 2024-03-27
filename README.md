@@ -145,22 +145,6 @@ Run command `npm run generate:readme:badges`
 Form are built using material-angular, so just adjust theme. 
 [Theme Angular Material](https://v8.material.angular.io/guide/theming)
 
-
-## TODO
-#### validators 
-in the future it will be extended for custom validators
-#### suffix
-in the future it will be developed
-#### preffix 
-in the future it will be developed
-#### disabled
-in future it will be developed
-#### file input
-in future it will be developed
-
-## Contribution
-Im open for contribution, just write to me! :)
-
 ## Legal
 Copyright 2023 Szymon Wasiak
 
